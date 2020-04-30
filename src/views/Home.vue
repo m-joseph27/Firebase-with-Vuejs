@@ -1,0 +1,360 @@
+<template>
+  <div class="wrapper">
+    <div class="mainChat">
+      <div class="navChat">
+        <div class="personProfile">
+          <div class="personPicture">
+            <img src="../assets/img/foto_ig.jpg">
+          </div>
+          <div class="contactParent">
+            <div class="contactName">
+              <h1>Muhammad Yusuf</h1>
+            </div>
+            <div class="contactStatus">
+              <p>active</p>
+            </div>
+          </div>
+        </div>
+        <div class="personInfo">
+          <div class="personLocation">
+            <img src="../assets/img/maps-and-flags.svg" width="20px" height="20px">
+          </div>
+          <div class="addPerson">
+            <img src="../assets/img/icons8-add-user-male-32.png" width="23px" height="23px">
+          </div>
+          <div class="find">
+            <img src="../assets/img/icons8-search-60.png" width="23px" height="23px">
+          </div>
+          <div class="more">
+            <img src="../assets/img/icons8-more-40.png" width="23px" height="23px">
+          </div>
+        </div>
+      </div>
+      <div class="personalBodyChat">
+        <div class="bodyChatSend">
+          <div class="attachment"></div>
+          <div class="buttonText"></div>
+          <div class="buttonSend"></div>
+        </div>
+      </div>
+    </div>
+    <div class="chatting">
+      <div class="headChat">
+        <h1>Chat</h1>
+      </div>
+      <div class="search">
+        <input type="text" placeholder="search">
+      </div>
+      <div v-for="chat in 1" :key="chat" class="bodyChat">
+        <div class="people">
+          <div class="photo">
+            <img src="../assets/img/foto_ig.jpg">
+          </div>
+          <div class="peopleName">
+            <div class="personName"><h2>Muhammad Yusuf</h2></div>
+            <div class="personChat"><p>hahahah</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <sidebar/>
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+// import HelloWorld from '@/components/HelloWorld.vue'
+import Sidebar from '../components/Sidebar.vue'
+
+export default {
+  name: 'Home',
+  components: {
+    Sidebar
+  }
+}
+</script>
+
+<style lang="scss">
+@font-face{
+  font-family: airbnb;
+  src: url('../assets/fonts/AirbnbCerealBold.ttf');
+}
+@font-face{
+  font-family: airbnbmedium;
+  src: url('../assets/fonts/AirbnbCerealMedium.ttf');
+}
+.wrapper{
+  // background-color: #EBF4FC;
+  background: linear-gradient(#EBF4FC ,#e2e2e2);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+  max-height: 100vh;
+  // position: fixed;
+  .mainChat{
+    // background-color: khaki;
+    width: 65vw;
+    height: 100vh - 12vh;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.26);
+    display: flex;
+    // padding-left: 15px;
+    .navChat{
+      background-color: rgb(255, 255, 255);
+      width: 100%;
+      height: 12vh;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.26);
+      position: fixed;
+      display: flex;
+      box-sizing: border-box;
+      .personProfile{
+        // background-color: skyblue;
+        width: 500px;
+        height: 100%;
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        .personPicture{
+          // background-color: slategray;
+          width: 60px;
+          height: 60px;
+          margin-left: 10px;
+          border-radius: 100%;
+          overflow: hidden;
+          img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .contactParent{
+          // background-color: springgreen;
+          width: 300px;
+          height: 100%;
+          margin-left: 0;
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          font-family: airbnbmedium;
+          margin-left: 20px;
+          .contactName{
+            // background-color: blueviolet;
+            width: 100%;
+            height: 30%;
+            h1{
+              font-size: 15px;
+              font-weight: 400;
+              line-height: 40px;
+            }
+          }
+          .contactStatus{
+            // background-color: burlywood;
+            width: 100%;
+            height: 30%;
+            p{
+              color: gray;
+              font-size: 12px;
+              font-weight: 300;
+              line-height: 40px;
+            }
+          }
+        }
+      }
+      .personInfo{
+        // background-color: slateblue;
+        width: 300px;
+        height: 100%;
+        margin-left: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .personLocation{
+          width: 50px;
+          height: 50px;
+          // background-color: indigo;
+          position: absolute;
+          right: 150px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .addPerson{
+          // background-color: greenyellow;
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          right: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .find{
+          // background-color: grey;
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          right: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .more{
+          // background-color: hotpink;
+          width: 50px;
+          height: 50px;
+          position: absolute;
+          right: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img{
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+    .personalBodyChat{
+      background-color: lightblue;
+      width: 100%;
+      height: 100%;
+      margin-top: 80px;
+      display: flex;
+      align-items: flex-end;
+      .bodyChatSend{
+        // background-color: lightcoral;
+        width: 100%;
+        height: 65px;
+        display: flex;
+        position: relative;
+        .attachment{
+          background-color: aquamarine;
+          width: 70px;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        .buttonText{
+          background-color: blueviolet;
+          width: 650px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 70px;
+        }
+      }
+    }
+  }
+  .chatting{
+    // background-color: rgb(174, 224, 123);
+    width: 35vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .headChat{
+      // background-color: lightblue;
+      width: 90%;
+      height: 10%;
+      box-shadow: -3px 3px 5px rgba(167, 165, 165, 0.562);
+      border-radius: 10px;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+      h1{
+        text-align: left;
+        font-family: airbnbmedium;
+        // color: rgb(250, 250, 250);
+      }
+    }
+    .search{
+      // background-color: lightcoral;
+      width: 90%;
+      height: 10%;
+      display: flex;
+      flex-direction: column;
+      input{
+        outline: none;
+        border: 1px solid rgb(216, 213, 213);
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 5px;
+        padding-left: 10px;
+        width: 400px;
+        height: 30px;
+      }
+    }
+    .bodyChat{
+      background-color: white;
+      border-radius: 10px;
+      // position: fixed;
+      width: 90%;
+      height: 80vh;
+      // overflow: scroll;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: -5px 5px 5px rgba(167, 165, 165, 0.562);
+      .people{
+        background-color: #EBF4FC;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        border-radius: 0 0 10px 10px;
+        // margin: 5px 0;
+        overflow: hidden;
+        .photo{
+          // background-color: rosybrown;
+          width: 55px;
+          height: 55px;
+          display: flex;
+          border-radius: 100%;
+          margin-left: 5px;
+          overflow: hidden;
+          margin-top: 15px;
+          img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .peopleName{
+          // background-color: saddlebrown;
+          width: 75%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          padding-left: 20px;
+          .personName{
+            // background-color: rgb(205, 81, 50);
+            width: 100%;
+            height: 50%;
+            // display: flex;
+            // flex-direction: column;
+            h2{
+              text-align: left;
+              font-family: airbnbmedium;
+              font-size: 15px;
+              font-weight: 300;
+              line-height: 45px;
+            }
+          }
+          .personChat{
+            // background-color: rgb(37, 167, 123);
+            width: 100%;
+            height: 50%;
+            display: flex;
+            p{
+              font-size: 13px;
+              font-weight: 100;
+              line-height: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</style>
