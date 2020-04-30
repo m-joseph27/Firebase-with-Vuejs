@@ -31,16 +31,25 @@
         </div>
       </div>
       <div class="personalBodyChat">
-        <div class="bodyChatSend">
-          <div class="attachment"></div>
-          <div class="buttonText"></div>
-          <div class="buttonSend"></div>
+        <div class="personalBodyChatWrap">
+          <div class="personalChatting"></div>
+          <div class="bodyChatSend">
+            <div class="attachment">
+              <img src="../assets/img/icons8-lol-50.png" width="30px" height="30px">
+            </div>
+            <div class="buttonText">
+              <input type="text" placeholder="type here">
+            </div>
+            <div class="buttonSend">
+              <img src="../assets/img/send.svg" width="30px" height="30px">
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div class="chatting">
       <div class="headChat">
-        <h1>Chat</h1>
+        <h1>Alphabet</h1>
       </div>
       <div class="search">
         <input type="text" placeholder="search">
@@ -54,10 +63,12 @@
             <div class="personName"><h2>Muhammad Yusuf</h2></div>
             <div class="personChat"><p>hahahah</p></div>
           </div>
+          <hr>
         </div>
       </div>
     </div>
   <sidebar/>
+  <modulemore/>
   </div>
 </template>
 
@@ -65,11 +76,13 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 import Sidebar from '../components/Sidebar.vue'
+import modulemore from '../components/Modulemore.vue'
 
 export default {
   name: 'Home',
   components: {
-    Sidebar
+    Sidebar,
+    modulemore
   }
 }
 </script>
@@ -86,6 +99,7 @@ export default {
 .wrapper{
   // background-color: #EBF4FC;
   background: linear-gradient(#EBF4FC ,#e2e2e2);
+  // background-color: #fff;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -96,14 +110,15 @@ export default {
   .mainChat{
     // background-color: khaki;
     width: 65vw;
-    height: 100vh - 12vh;
+    height: 100vh - 10vh;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.26);
     display: flex;
+    position: relative;
     // padding-left: 15px;
     .navChat{
-      background-color: rgb(255, 255, 255);
+      background-color: #EBF4FC;
       width: 100%;
-      height: 12vh;
+      height: 10vh;
       box-shadow: 0 0 3px rgba(0, 0, 0, 0.26);
       position: fixed;
       display: flex;
@@ -117,8 +132,8 @@ export default {
         align-items: center;
         .personPicture{
           // background-color: slategray;
-          width: 60px;
-          height: 60px;
+          width: 50px;
+          height: 50px;
           margin-left: 10px;
           border-radius: 100%;
           overflow: hidden;
@@ -145,7 +160,7 @@ export default {
             h1{
               font-size: 15px;
               font-weight: 400;
-              line-height: 40px;
+              line-height: 30px;
             }
           }
           .contactStatus{
@@ -209,6 +224,7 @@ export default {
           display: flex;
           justify-content: center;
           align-items: center;
+          cursor: pointer;
           img{
             transform: rotate(90deg);
           }
@@ -216,33 +232,71 @@ export default {
       }
     }
     .personalBodyChat{
-      background-color: lightblue;
+      background-color: rgb(255, 255, 255);
       width: 100%;
       height: 100%;
-      margin-top: 80px;
+      margin-top: 65px;
       display: flex;
       align-items: flex-end;
-      .bodyChatSend{
-        // background-color: lightcoral;
-        width: 100%;
-        height: 65px;
+      .personalBodyChatWrap{
         display: flex;
-        position: relative;
-        .attachment{
-          background-color: aquamarine;
-          width: 70px;
-          height: 100%;
-          position: absolute;
-          left: 0;
-          top: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 65px;
+        max-width: 100%;
+        .personalChatting{
+          background-color: rgb(255, 255, 255);
+          width: 100%;
+          height: 88%;
         }
-        .buttonText{
-          background-color: blueviolet;
-          width: 650px;
-          height: 100%;
+        .bodyChatSend{
+          background-color: #EBF4FC;
+          width: 100%;
+          height: 65px;
+          display: flex;
           position: absolute;
-          top: 0;
-          left: 70px;
+          bottom: -62px;
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.527);
+          .attachment{
+            // background-color: aquamarine;
+            width: 70px;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .buttonText{
+            // background-color: blueviolet;
+            width: 690px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 70px;
+            display: flex;
+            align-items: center;
+            input{
+              width: 100%;
+              height: 50%;
+              padding-left: 10px;
+              border-radius: 10px;
+              outline: none;
+              border: none;
+            }
+          }
+          .buttonSend{
+            // background-color: burlywood;
+            position: absolute;
+            top: 0;
+            left: 760px;
+            width: 70px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
     }
@@ -256,17 +310,17 @@ export default {
     align-items: center;
     .headChat{
       // background-color: lightblue;
-      width: 90%;
+      width: 100%;
       height: 10%;
-      box-shadow: -3px 3px 5px rgba(167, 165, 165, 0.562);
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
       border-radius: 10px;
-      padding-left: 10px;
+      padding-left: 20px;
       display: flex;
       align-items: center;
       h1{
         text-align: left;
         font-family: airbnbmedium;
-        // color: rgb(250, 250, 250);
+        color: rgba(0, 0, 0, 0.644);
       }
     }
     .search{
@@ -287,7 +341,7 @@ export default {
       }
     }
     .bodyChat{
-      background-color: white;
+      background-color: #EBF4FC;
       border-radius: 10px;
       // position: fixed;
       width: 90%;
@@ -298,13 +352,16 @@ export default {
       align-items: center;
       box-shadow: -5px 5px 5px rgba(167, 165, 165, 0.562);
       .people{
-        background-color: #EBF4FC;
+        // background-color: rgb(255, 255, 255);
         width: 100%;
         height: 80px;
         display: flex;
         border-radius: 0 0 10px 10px;
         // margin: 5px 0;
         overflow: hidden;
+        hr{
+          border: 1px solid gainsboro;
+        }
         .photo{
           // background-color: rosybrown;
           width: 55px;
