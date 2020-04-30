@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="mainChat">
-      <div class="navChat">
+      <div @moreClicked="modalInfo" class="navChat">
         <div class="personProfile">
           <div class="personPicture">
             <img src="../assets/img/foto_ig.jpg">
@@ -25,7 +25,7 @@
           <div class="find">
             <img src="../assets/img/icons8-search-60.png" width="23px" height="23px">
           </div>
-          <div class="more">
+          <div @click="$emit('moreClicked')" class="more">
             <img src="../assets/img/icons8-more-40.png" width="23px" height="23px">
           </div>
         </div>
@@ -83,6 +83,14 @@ export default {
   components: {
     Sidebar,
     modulemore
+  },
+  methods: {
+    modalInfo () {
+      document.querySelector('.wrapperModule').classList.add('moduleActive')
+    }
+  },
+  closeModalInfo () {
+    document.querySelector('.contentModule').classList.remove('moduleActive')
   }
 }
 </script>
@@ -185,6 +193,7 @@ export default {
         justify-content: center;
         align-items: center;
         position: relative;
+        cursor: pointer;
         .personLocation{
           width: 50px;
           height: 50px;
@@ -204,6 +213,7 @@ export default {
           display: flex;
           align-items: center;
           justify-content: center;
+          cursor: pointer;
         }
         .find{
           // background-color: grey;
@@ -225,6 +235,10 @@ export default {
           justify-content: center;
           align-items: center;
           cursor: pointer;
+          &:active{
+            background-color: rgb(255, 255, 255);
+            border-radius: 100%;
+          }
           img{
             transform: rotate(90deg);
           }
