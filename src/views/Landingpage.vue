@@ -11,23 +11,33 @@
         </div>
         <div class="navName"><p>Alphabet.</p></div>
         <div class="navButton">
-          <p>Login</p>
-          <p>Sign up</p>
+          <p @click="loginModul">Login</p>
+          <p @click="signModul">Sign up</p>
         </div>
       </div>
     </div>
     <login/>
+    <register/>
   </div>
 </template>
 
 <script>
 import Login from '../components/Login'
+import Register from '../components/Register'
 
 export default {
   components: {
-    Login
+    Login,
+    Register
+  },
+  methods: {
+    loginModul () {
+      document.querySelector('.loginWrap').classList.add('loginWrapActive')
+    },
+    signModul () {
+      document.querySelector('.registerWrap').classList.add('registerWrapActive')
+    }
   }
-
 }
 </script>
 
@@ -87,15 +97,14 @@ export default {
         width: 400px;
         height: 200px;
         position: absolute;
-        top: 340px;
+        top: 300px;
         img{
           object-fit: contain;
         }
-        // left: 300px;
       }
       .navName{
         // background-color: gray;
-        width: 150px;
+        width: 200px;
         height: 100%;
         p{
           font-family: airbnbmedium;
@@ -107,10 +116,10 @@ export default {
       }
       .navButton{
         // background-color: greenyellow;
-        width: 300px;
+        width: 200px;
         height: 100%;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         cursor: pointer;
         p{
           font-family: airbnbmedium;

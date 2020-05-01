@@ -1,5 +1,8 @@
 # project-week8
 
+# Alphabet
+## Alphabet is web chat web build with firebase
+
 ## Project setup
 ```
 npm install

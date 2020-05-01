@@ -3,10 +3,21 @@
     <div class="head">
       <p>Login</p>
     </div>
-    <div class="body"></div>
+    <div class="body">
+      <input type="email" placeholder="Input Your Email">
+      <input type="password" placeholder="Input Your Password">
+      <div class="signGoogle">
+        <div class="googleLogo">
+          <img src="../assets/img/icons8-google-30.png" width="25px" height="25px">
+          <p>Sign in with google account</p>
+        </div>
+        <!-- <div class="googleText"></div> -->
+      </div>
+    </div>
     <div class="bottom">
-      <button>Login</button>
-      <button>Sign up</button>
+      <router-link to="/home">
+        <button>Login</button>
+      </router-link>
     </div>
   </div>
 </template>
@@ -28,6 +39,9 @@ export default {
 }
 
 .loginWrap{
+  visibility: hidden;
+  opacity: 0;
+  transition: ease .5s;
   background-color: white;
   width: 400px;
   height: 400px;
@@ -35,41 +49,85 @@ export default {
   right: 150px;
   top: 120px;
   border-radius: 5px;
+  &.loginWrapActive{
+    visibility: visible;
+    opacity: 1;
+  }
   .head{
     // background-color: wheat;
     width: 100%;
     height: 15%;
     display: flex;
+    justify-content: center;
     p{
       font-family: airbnbmedium;
       font-size: 20px;
       padding-left: 10px;
+      color: #556778;
+      font-weight: 700;
     }
   }
   .body{
-    background-color: yellowgreen;
+    // background-color: yellowgreen;
     width: 100%;
     height: 70%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    input{
+      padding-left: 10px;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #F7C5C4;
+      width: 300px;
+      height: 40px;
+    }
+    .signGoogle{
+      background-color: #D5EEE9;
+      width: 310px;
+      height: 45px;
+      margin-top: 150px;
+      border-radius: 5px;
+      display: flex;
+      padding-left: 30px;
+      box-sizing: border-box;
+      position: relative;
+      padding-left: 80px;
+      cursor: pointer;
+      p{
+        font-family: airbnbmedium;
+        font-size: 14px;
+        color: #556778;
+        font-weight: bold;
+      }
+      img{
+        position: absolute;
+        top: 10px;
+        left: 40px;
+      }
+    }
   }
   .bottom{
     // background-color: aquamarine;
-    width: 55%;
+    width: 100%;
     height: 15%;
     display: flex;
-    justify-content: space-around;
+    // justify-content: space-around;
     align-items: center;
+    justify-content: center;
     button{
       cursor: pointer;
       border: none;
       outline: none;
-      width: 100px;
+      width: 310px;
       height: 40px;
       border-radius: 5px;
       font-family: airbnbmedium;
-      color: #dd99b5;
-      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+      color: #556778;
+      // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
       font-size: 15px;
+      background: #FCCECB;
+      font-weight: bold;
     }
   }
 }

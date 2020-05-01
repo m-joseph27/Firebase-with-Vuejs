@@ -14,7 +14,9 @@
     </div>
     <div class="bottom-wrapper">
       <div class="quit">
-        <img src="../assets/img/quit.svg">
+        <router-link to="/">
+          <img src="../assets/img/quit.svg">
+        </router-link>
       </div>
     </div>
   </div>

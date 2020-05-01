@@ -23,20 +23,19 @@ export default {
   position: fixed;
   width: 100%;
   height: 100%;
-  // visibility: hidden;
-  // opacity: 0;
-  transition: ease 0.50s;
+  visibility: hidden;
+  opacity: 0;
+  transition: ease 0.2s;
   &.moduleActive{
-    // visibility: visible;
-    // opacity: 1;
-    top: 45px;
-    right: 40px;
+    visibility: visible;
+    opacity: 1;
+    top: 5px;
   }
   .contentModule{
     background-color: white;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.500);
     width: 150px;
-    height: 100px;
+    height: 90px;
     position: absolute;
     top: 45px;
     right: 40px;

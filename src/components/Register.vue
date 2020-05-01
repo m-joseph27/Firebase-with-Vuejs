@@ -1,19 +1,45 @@
 <template>
-  <div class="loginWrap">
+  <div class="registerWrap">
     <div class="head">
-      <p>Login</p>
+      <p>Sign Up</p>
     </div>
-    <div class="body"></div>
+    <div class="body">
+      <input type="email" placeholder="Input Your Email" v-model="email">
+      <input type="password" placeholder="Input Your Password" v-model="password">
+      <div class="signGoogle">
+        <div class="googleLogo">
+          <img src="../assets/img/icons8-google-30.png" width="25px" height="25px">
+          <p>Sign up with google account</p>
+        </div>
+        <!-- <div class="googleText"></div> -->
+      </div>
+    </div>
     <div class="bottom">
-      <button>Login</button>
-      <button>Sign up</button>
+      <router-link to="/home">
+        <button v-on:click="register">Sign up</button>
+      </router-link>
+      <!-- <button>Login</button> -->
     </div>
   </div>
 </template>
 
 <script>
-export default {
+// import firebase from 'firebase'
 
+export default {
+  name: 'register',
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    register (e) {
+      console.log('register')
+      e.preventDefault()
+    }
+  }
 }
 </script>
 
@@ -27,7 +53,10 @@ export default {
   src: url('../assets/fonts/AirbnbCerealBold.ttf');
 }
 
-.loginWrap{
+.registerWrap{
+  visibility: hidden;
+  opacity: 0;
+  transition: ease .5s;
   background-color: white;
   width: 400px;
   height: 400px;
@@ -35,26 +64,67 @@ export default {
   right: 150px;
   top: 120px;
   border-radius: 5px;
+  &.registerWrapActive{
+    visibility: visible;
+    opacity: 1;
+  }
   .head{
     // background-color: wheat;
     width: 100%;
     height: 15%;
     display: flex;
+    justify-content: center;
     p{
       font-family: airbnbmedium;
       font-size: 20px;
       padding-left: 10px;
+      color: #556778;
+      font-weight: 700;
     }
   }
   .body{
-    background-color: yellowgreen;
+    // background-color: yellowgreen;
     width: 100%;
     height: 70%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    input{
+      padding-left: 10px;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #F7C5C4;
+      width: 300px;
+      height: 40px;
+    }
+    .signGoogle{
+      background-color: #D5EEE9;
+      width: 310px;
+      height: 45px;
+      margin-top: 150px;
+      border-radius: 5px;
+      display: flex;
+      padding-left: 30px;
+      box-sizing: border-box;
+      position: relative;
+      padding-left: 80px;
+      cursor: pointer;
+      p{
+        font-family: airbnbmedium;
+        font-size: 14px;
+        color: #556778;
+        font-weight: bold;
+      }
+      img{
+        position: absolute;
+        top: 10px;
+        left: 40px;
+      }
+    }
   }
   .bottom{
     // background-color: aquamarine;
-    width: 55%;
+    width: 100%;
     height: 15%;
     display: flex;
     justify-content: space-around;
@@ -63,13 +133,14 @@ export default {
       cursor: pointer;
       border: none;
       outline: none;
-      width: 100px;
+      width: 310px;
       height: 40px;
       border-radius: 5px;
       font-family: airbnbmedium;
-      color: #dd99b5;
+      color: #556778;
       text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
       font-size: 15px;
+      background: #FCCECB;
     }
   }
 }

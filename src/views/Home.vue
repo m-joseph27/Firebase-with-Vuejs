@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="mainChat">
-      <div @moreClicked="modalInfo" class="navChat">
+      <div class="navChat">
         <div class="personProfile">
           <div class="personPicture">
             <img src="../assets/img/foto_ig.jpg">
@@ -25,7 +25,7 @@
           <div class="find">
             <img src="../assets/img/icons8-search-60.png" width="23px" height="23px">
           </div>
-          <div @click="$emit('moreClicked')" class="more">
+          <div @click="modalInfo" class="more">
             <img src="../assets/img/icons8-more-40.png" width="23px" height="23px">
           </div>
         </div>
