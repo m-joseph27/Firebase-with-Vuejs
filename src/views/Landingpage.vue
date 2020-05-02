@@ -12,6 +12,9 @@
           <p @click="signModul">Sign up</p>
         </div>
       </div>
+      <!-- <div class="text">
+        <p>Keep in touch with your friend <br><span> with our serve</span></p>
+      </div> -->
     </div>
     <login/>
     <register/>
@@ -62,13 +65,33 @@ export default {
   }
   .loginForm{
     // background-color: gray;
-    position: absolute;
+    position: relative;
     width: 85%;
     height: 85%;
     top: 8%;
     left: 7.5%;
     img{
       border-radius: 7px;
+    }
+    .text{
+      // background-color: aquamarine;
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      right: 30px;
+      top: 120px;
+      p{
+        font-family: airbnbmedium;
+        font-size: 20px;
+        color: #556778;
+        text-align: left;
+        font-weight: 700;
+        line-height: 30px;
+      }
+      span{
+        font-size: 15px;
+        font-weight: 500;
+      }
     }
     .navLogin{
       // background-color: #fff;

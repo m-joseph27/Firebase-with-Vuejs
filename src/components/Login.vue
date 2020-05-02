@@ -1,5 +1,5 @@
 <template>
-  <div class="loginWrap">
+  <div @keypress.enter="login" class="loginWrap">
     <div class="head">
       <p>Login</p>
     </div>
@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <div class="bottom">
+    <div @keyup.enter="login" class="bottom">
         <button @click="login">Login</button>
     </div>
   </div>

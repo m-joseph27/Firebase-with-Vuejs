@@ -32,18 +32,18 @@
       </div>
       <div class="personalBodyChat">
         <div class="personalBodyChatWrap">
-          <div class="personalChatting">
-            <div class="toChat"><p>hahahaha</p></div>
+          <div v-for="message in messages" :key="message" class="personalChatting">
+            <div class="toChat"><p>{{ message.message }}</p></div>
           </div>
           <div class="bodyChatSend">
             <div class="attachment">
               <img src="../assets/img/icons8-lol-50.png" width="30px" height="30px">
             </div>
             <div class="buttonText">
-              <input type="text" placeholder="type here">
+              <input @keyup.enter="sendMessage" v-model="msg" type="text" placeholder="type here">
             </div>
             <div class="buttonSend">
-              <img src="../assets/img/send.svg" width="30px" height="30px">
+              <img @click="sendMessage" src="../assets/img/send.svg" width="30px" height="30px">
             </div>
           </div>
         </div>
@@ -63,9 +63,8 @@
           </div>
           <div class="peopleName">
             <div class="personName"><h2>Muhammad Yusuf</h2></div>
-            <div class="personChat"><p>hahahah</p></div>
+            <div v-for="message in messages" :key="message" class="personChat"> <p>{{ message.message }}</p></div>
           </div>
-          <!-- <hr> -->
         </div>
       </div>
     </div>
@@ -75,13 +74,18 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 import Sidebar from '../components/Sidebar.vue'
 import modulemore from '../components/Modulemore.vue'
+import db from '../firebaseInit'
 
 export default {
-  name: 'Home',
+  name: 'home',
+  data () {
+    return {
+      msg: null,
+      messages: []
+    }
+  },
   components: {
     Sidebar,
     modulemore
@@ -89,10 +93,26 @@ export default {
   methods: {
     modalInfo () {
       document.querySelector('.wrapperModule').classList.add('moduleActive')
+    },
+    sendMessage () {
+      db.collection('chat').add({
+        message: this.msg
+      })
+      this.msg = null
+    },
+    fetchMessage () {
+      db.collection('chat').onSnapshot((querySnapshot) => {
+        // console.log(querySnapshot)
+        const allMessage = []
+        querySnapshot.forEach(doc => {
+          allMessage.push(doc.data())
+        })
+        this.messages = allMessage
+      })
     }
   },
-  closeModalInfo () {
-    document.querySelector('.contentModule').classList.remove('moduleActive')
+  created () {
+    this.fetchMessage()
   }
 }
 </script>
@@ -108,7 +128,7 @@ export default {
 }
 .wrapper{
   // background-color: #EBF4FC;
-  background: linear-gradient(#EBF4FC ,#e2e2e2);
+  background: linear-gradient(#CFE9E5,#e2e2e2);
   // background-color: #fff;
   width: 100vw;
   height: 100vh;
@@ -126,7 +146,7 @@ export default {
     position: relative;
     // padding-left: 15px;
     .navChat{
-      background-color: #EBF4FC;
+      background-color: #CFE9E5;
       width: 100%;
       height: 10vh;
       box-shadow: 0 0 3px rgba(0, 0, 0, 0.26);
@@ -258,21 +278,26 @@ export default {
         display: flex;
         width: 100%;
         height: 100%;
-        margin-top: 65px;
+        // margin-top: 65px;
         max-width: 100%;
+        flex-direction: column;
+        overflow: auto;
         .personalChatting{
           background-color: rgb(255, 255, 255);
-          width: 100%;
-          height: 88%;
+          // width: 100%;
+          // height: 50px;
           padding-left: 10px;
+          margin: 10px 10px;
+          display: flex;
           .toChat{
             background-color: rgb(255, 255, 255);
             box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
             border-radius: 10px;
-            width: 300px;
-            height: 100px;
+            // width: 300px;
+            // height: 50px;
             padding-left: 10px;
-            padding-top: 2px;
+            padding-right: 10px;
+            // padding-top: 2px;
             p{
               text-align: left;
             }
@@ -325,6 +350,7 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
           }
         }
       }

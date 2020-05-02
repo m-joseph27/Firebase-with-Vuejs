@@ -27,13 +27,22 @@ export default {
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      displayName: '',
+      imageProfil: ''
     }
   },
   methods: {
     register (e) {
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
         .then(user => {
+          firebase.firestore().collection('user').doc(firebase.auth().currentUser.uid)
+            .set({
+              email: this.email,
+              displayName: this.displayName,
+              imageProfil: this.imageProfil,
+              phoneNumber: 0
+            })
           alert(`account created for ${this.email}`)
           this.$router.push('/home')
         },

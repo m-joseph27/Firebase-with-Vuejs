@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Landingpage from '../views/Landingpage.vue'
 import firebase from 'firebase'
+import Settting from '../components/Setting.vue'
+import Menu from '../components/Menu.vue'
+import Location from '../components/Location.vue'
 
 Vue.use(VueRouter)
 
@@ -22,6 +25,21 @@ const routes = [
     meta: {
       requiresGuest: true
     }
+  },
+  {
+    path: '/setting',
+    name: 'Setting',
+    component: Settting
+  },
+  {
+    path: '/menu',
+    name: 'Menu',
+    component: Menu
+  },
+  {
+    path: '/location',
+    name: 'Location',
+    component: Location
   }
 ]
 

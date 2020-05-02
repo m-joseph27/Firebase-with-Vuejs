@@ -3,13 +3,22 @@
     <div class="top-wrapper">
       <div class="home"></div>
       <div class="menu">
-        <img src="../assets/img/menu.png">
+        <router-link to="/menu">
+          <img src="../assets/img/menu.png">
+        </router-link>
       </div>
       <div class="chat">
         <img src="../assets/img/conversation.png">
       </div>
       <div class="setting">
-        <img src="../assets/img/settings.svg">
+        <router-link to="/setting">
+          <img src="../assets/img/settings.png">
+        </router-link>
+      </div>
+      <div class="selfLocation">
+        <router-link to="/location">
+          <img src="../assets/img/maps-and-flags.svg" width="30px" height="30px">
+        </router-link>
       </div>
     </div>
     <div class="bottom-wrapper">
@@ -50,14 +59,15 @@ export default {
   // background: linear-gradient(#08e64b, #d3c012);
   // background: linear-gradient(120deg, rgb(46, 233, 9), blue);
   // background: linear-gradient(50deg, red, blue);
-  background: linear-gradient(#EBF4FC ,#e2e2e2);
+  background: linear-gradient(#CFE9E5,#e2e2e2);
   // border-radius: 0 60px;
-  width: 100px;
+  width: 80px;
   height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
   .top-wrapper{
     // background-color: #fff;
     display: flex;
@@ -115,6 +125,7 @@ export default {
     box-sizing: border-box;
     display: flex;
     align-items: flex-end;
+    cursor: pointer;
     .quit{
       // background-color: indigo;
       display: flex;
@@ -123,6 +134,7 @@ export default {
       justify-content: center;
       align-items: center;
       padding-right: 15px;
+      cursor: pointer;
       img{
         object-fit: contain;
         width: 40%;
