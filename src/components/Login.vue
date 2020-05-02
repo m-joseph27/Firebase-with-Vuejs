@@ -4,27 +4,46 @@
       <p>Login</p>
     </div>
     <div class="body">
-      <input type="email" placeholder="Input Your Email">
-      <input type="password" placeholder="Input Your Password">
+      <input type="email" placeholder="Input Your Email" v-model="email">
+      <input type="password" placeholder="Input Your Password" v-model="password">
       <div class="signGoogle">
         <div class="googleLogo">
           <img src="../assets/img/icons8-google-30.png" width="25px" height="25px">
           <p>Sign in with google account</p>
         </div>
-        <!-- <div class="googleText"></div> -->
       </div>
     </div>
     <div class="bottom">
-      <router-link to="/home">
-        <button>Login</button>
-      </router-link>
+        <button @click="login">Login</button>
     </div>
   </div>
 </template>
 
 <script>
-export default {
+import firebase from 'firebase'
 
+export default {
+  name: 'login',
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
+  methods: {
+    login (e) {
+      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+        .then(user => {
+          alert(`welcome ${this.email}`)
+          this.$router.push('/home')
+        },
+        err => {
+          alert(err.message)
+        }
+        )
+      e.preventDefault()
+    }
+  }
 }
 </script>
 

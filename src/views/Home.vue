@@ -32,7 +32,9 @@
       </div>
       <div class="personalBodyChat">
         <div class="personalBodyChatWrap">
-          <div class="personalChatting"></div>
+          <div class="personalChatting">
+            <div class="toChat"><p>hahahaha</p></div>
+          </div>
           <div class="bodyChatSend">
             <div class="attachment">
               <img src="../assets/img/icons8-lol-50.png" width="30px" height="30px">
@@ -63,7 +65,7 @@
             <div class="personName"><h2>Muhammad Yusuf</h2></div>
             <div class="personChat"><p>hahahah</p></div>
           </div>
-          <hr>
+          <!-- <hr> -->
         </div>
       </div>
     </div>
@@ -262,6 +264,19 @@ export default {
           background-color: rgb(255, 255, 255);
           width: 100%;
           height: 88%;
+          padding-left: 10px;
+          .toChat{
+            background-color: rgb(255, 255, 255);
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+            border-radius: 10px;
+            width: 300px;
+            height: 100px;
+            padding-left: 10px;
+            padding-top: 2px;
+            p{
+              text-align: left;
+            }
+          }
         }
         .bodyChatSend{
           background-color: #EBF4FC;
@@ -367,12 +382,13 @@ export default {
       box-shadow: -5px 5px 5px rgba(167, 165, 165, 0.562);
       .people{
         // background-color: rgb(255, 255, 255);
-        width: 100%;
+        width: 95%;
         height: 80px;
         display: flex;
-        border-radius: 0 0 10px 10px;
+        // border-radius: 0 0 10px 10px;
         // margin: 5px 0;
         overflow: hidden;
+        border-bottom: 1px solid rgba(167, 165, 165, 0.562);
         hr{
           border: 1px solid gainsboro;
         }

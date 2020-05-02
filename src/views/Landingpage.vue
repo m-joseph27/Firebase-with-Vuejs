@@ -1,8 +1,5 @@
 <template>
   <div class="loginParent">
-    <!-- <div class="bubble1"></div> -->
-    <div class="bubble2"></div>
-    <!-- <img src="../assets/img/pink-corded-headphones-on-pink-and-teal-wall-1037996.jpg"> -->
     <div class="loginForm">
       <img src="../assets/img/pink-corded-headphones-on-pink-and-teal-wall-1037996.jpg">
       <div class="navLogin">
@@ -62,17 +59,6 @@ export default {
     object-fit: cover;
     width: 100%;
     height: 100%;
-  }
-  .bubble1{
-    background: linear-gradient(rgb(187, 204, 219) ,#dd99b5);
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
-    border-radius: 100%;
-    opacity: .5;
-    z-index: 2;
   }
   .loginForm{
     // background-color: gray;

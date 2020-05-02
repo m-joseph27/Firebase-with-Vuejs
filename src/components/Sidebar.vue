@@ -13,18 +13,35 @@
       </div>
     </div>
     <div class="bottom-wrapper">
-      <div class="quit">
-        <router-link to="/">
+      <div @click="logout" class="quit">
           <img src="../assets/img/quit.svg">
-        </router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
+import firebase from 'firebase'
 
+export default {
+  name: 'sidebar',
+  data () {
+    return {
+      isLoggeIn: false,
+      currentUser: false
+    }
+  },
+  methods: {
+    logout () {
+      firebase.auth().signOut().then(() => {
+        this.$router.push('/')
+      })
+        .catch(error => {
+          console.log(error)
+        }
+        )
+    }
+  }
 }
 </script>
 
@@ -96,13 +113,15 @@ export default {
     width: 100%;
     height: 25%;
     box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
     .quit{
       // background-color: indigo;
       display: flex;
       width: 100%;
       height: 70px;
       justify-content: center;
-      align-items: flex-end;
+      align-items: center;
       padding-right: 15px;
       img{
         object-fit: contain;

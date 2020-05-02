@@ -11,20 +11,16 @@
           <img src="../assets/img/icons8-google-30.png" width="25px" height="25px">
           <p>Sign up with google account</p>
         </div>
-        <!-- <div class="googleText"></div> -->
       </div>
     </div>
     <div class="bottom">
-      <router-link to="/home">
-        <button v-on:click="register">Sign up</button>
-      </router-link>
-      <!-- <button>Login</button> -->
+        <button @click="register">Sign up</button>
     </div>
   </div>
 </template>
 
 <script>
-// import firebase from 'firebase'
+import firebase from 'firebase'
 
 export default {
   name: 'register',
@@ -36,7 +32,15 @@ export default {
   },
   methods: {
     register (e) {
-      console.log('register')
+      firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+        .then(user => {
+          alert(`account created for ${this.email}`)
+          this.$router.push('/home')
+        },
+        err => {
+          alert(err.message)
+        }
+        )
       e.preventDefault()
     }
   }
