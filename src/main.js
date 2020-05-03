@@ -3,15 +3,17 @@ import App from './App.vue'
 import router from './router'
 import firebase from 'firebase'
 import './firebaseInit'
-// Firebase App (the core Firebase SDK) is always required and
-// must be listed before other Firebase SDKs
-// const firebase = require("firebase/app");
-
-// Add the Firebase products that you want to use
-// require("firebase/auth");
-// require("firebase/firestore");
+import VueGeolocation from 'vue-browser-geolocation'
+import * as VueGoogleMaps from 'vue2-google-maps'
 
 Vue.config.productionTip = false
+Vue.use(VueGeolocation)
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyBs58h3su-i3H582rjuCuY5LRWNjpCJhPg'
+  }
+})
 
 let app
 firebase.auth().onAuthStateChanged(function (user) {
