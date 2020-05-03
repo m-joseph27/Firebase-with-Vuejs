@@ -23,7 +23,7 @@
     </div>
     <div class="bottom-wrapper">
       <div @click="logout" class="quit">
-          <img src="../assets/img/quit.svg">
+          <img id="button" src="../assets/img/quit.svg">
       </div>
     </div>
   </div>

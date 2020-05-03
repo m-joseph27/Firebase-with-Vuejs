@@ -14,7 +14,7 @@
       </div>
     </div>
     <div @keyup.enter="login" class="bottom">
-        <button @click="login">Login</button>
+        <button id="button" @click="login">Login</button>
     </div>
   </div>
 </template>

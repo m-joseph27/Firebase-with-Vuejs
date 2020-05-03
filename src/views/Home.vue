@@ -63,7 +63,7 @@
           </div>
           <div class="peopleName">
             <div class="personName"><h2>Muhammad Yusuf</h2></div>
-            <div v-for="message in messages" :key="message" class="personChat"> <p>{{ message.message }}</p></div>
+            <div class="personChat"> <p>{{ messages[messages.length-1].message }}</p></div>
           </div>
         </div>
       </div>
@@ -96,12 +96,13 @@ export default {
     },
     sendMessage () {
       db.collection('chat').add({
-        message: this.msg
+        message: this.msg,
+        createdAt: new Date()
       })
       this.msg = null
     },
     fetchMessage () {
-      db.collection('chat').onSnapshot((querySnapshot) => {
+      db.collection('chat').orderBy('createdAt').onSnapshot((querySnapshot) => {
         // console.log(querySnapshot)
         const allMessage = []
         querySnapshot.forEach(doc => {
@@ -270,7 +271,7 @@ export default {
     .personalBodyChat{
       background-color: rgb(255, 255, 255);
       width: 100%;
-      height: 100%;
+      height: 88%;
       margin-top: 65px;
       display: flex;
       align-items: flex-end;
