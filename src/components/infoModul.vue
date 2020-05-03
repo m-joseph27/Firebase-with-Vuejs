@@ -11,16 +11,91 @@
         <img src="../assets/img/foto_ig.jpg">
         <p>Muhammad Yusuf</p>
       </div>
-      <div class="bodyMap"></div>
+      <div class="bodyMap">
+        <div style="max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between">
+            <div>
+                <h1>coordinates:</h1>
+                <p>{{ myCoordinates.lat }} Latitude, {{ myCoordinates.lng }} Longitude</p>
+            </div>
+            <div>
+                <h1>Map coordinates:</h1>
+                <p>{{ mapCoordinates.lat }} Latitude, {{ mapCoordinates.lng }} Longitude</p>
+            </div>
+        </div>
+        <GmapMap
+            :center="myCoordinates"
+            :zoom="zoom"
+            style="width:300px; height:300px; margin: 32px auto;"
+            ref="mapRef"
+            @dragend="handleDrag"
+        ></GmapMap>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      map: null,
+      myCoordinates: {
+        lat: 0,
+        lng: 0
+      },
+      zoom: 7
+    }
+  },
+  created () {
+    // does the user have a saved center? use it instead of the default
+    if (localStorage.center) {
+      this.myCoordinates = JSON.parse(localStorage.center)
+    } else {
+      // get user's coordinates from browser request
+      this.$getLocation({})
+        .then(coordinates => {
+          this.myCoordinates = coordinates
+        })
+        .catch(error => alert(error))
+    }
+    // does the user have a saved zoom? use it instead of the default
+    if (localStorage.zoom) {
+      this.zoom = parseInt(localStorage.zoom)
+    }
+  },
+  mounted () {
+    // add the map to a data object
+    this.$refs.mapRef.$mapPromise.then(map => {
+      this.map = map
+    })
+  },
   methods: {
     closeContact () {
       document.querySelector('.infoWrap').classList.remove('infoWrapActive')
+    },
+    handleDrag () {
+      // get center and zoom level, store in localstorage
+      const center = {
+        lat: this.map.getCenter().lat(),
+        lng: this.map.getCenter().lng()
+      }
+      const zoom = this.map.getZoom()
+      localStorage.center = JSON.stringify(center)
+      localStorage.zoom = zoom
+    }
+  },
+  computed: {
+    mapCoordinates () {
+      if (!this.map) {
+        return {
+          lat: 0,
+          lng: 0
+        }
+      }
+      return {
+        lat: this.map.getCenter().lat().toFixed(4),
+        lng: this.map.getCenter().lng().toFixed(4)
+      }
     }
   }
 }
@@ -96,6 +171,11 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+      p{
+        font-family: airbnb;
+        line-height: 50px;
+      }
       img{
         object-fit: cover;
         // object-position: center;
@@ -107,8 +187,14 @@ export default {
     .bodyMap{
       background-color: white;
       width: 100%;
-      height: 50%;
+      height: 40%;
       margin: 10px 0;
+      p{
+        font-size: 12px;
+      }
+      h1{
+        font-size: 20px;
+      }
     }
   }
 }

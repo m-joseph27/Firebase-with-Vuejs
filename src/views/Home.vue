@@ -34,7 +34,7 @@
         <div class="personalBodyChatWrap">
           <div v-for="message in messages" :key="message" class="personalChatting">
             <div class="toChat"><p>{{ message.message }}</p></div>
-            <div class="timeChatting"><p>22.30</p></div>
+            <div class="timeChatting"><p>{{ message.createdAt }}</p></div>
           </div>
           <div class="bodyChatSend">
             <div class="attachment">
@@ -65,6 +65,7 @@
           <div class="peopleName">
             <div class="personName"><h2>Muhammad Yusuf</h2></div>
             <div class="personChat"> <p>{{ messages[messages.length-1].message }}</p></div>
+            <div class="personTime"><p>22:20</p></div>
           </div>
         </div>
       </div>
@@ -321,6 +322,7 @@ export default {
               font-size: 10px;
               font-weight: 600;
               color: gray;
+              padding-left: 10px;
             }
           }
         }
@@ -461,6 +463,7 @@ export default {
           display: flex;
           flex-direction: column;
           padding-left: 20px;
+          position: relative;
           .personName{
             // background-color: rgb(205, 81, 50);
             width: 100%;
@@ -485,6 +488,17 @@ export default {
               font-weight: 100;
               line-height: 10px;
               color: rgba(0, 0, 0, 0.650);
+            }
+          }
+          .personTime{
+            // background-color: wheat;
+            // width: 30px;
+            // height: 20px;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            p{
+              color: gray;
             }
           }
         }
