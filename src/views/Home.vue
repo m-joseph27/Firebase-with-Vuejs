@@ -25,7 +25,7 @@
           <div class="find">
             <img src="../assets/img/icons8-search-60.png" width="23px" height="23px">
           </div>
-          <div @click="modalInfo" class="more">
+          <div @click="modulContact" class="more">
             <img src="../assets/img/icons8-more-40.png" width="23px" height="23px">
           </div>
         </div>
@@ -34,6 +34,7 @@
         <div class="personalBodyChatWrap">
           <div v-for="message in messages" :key="message" class="personalChatting">
             <div class="toChat"><p>{{ message.message }}</p></div>
+            <div class="timeChatting"><p>22.30</p></div>
           </div>
           <div class="bodyChatSend">
             <div class="attachment">
@@ -70,6 +71,7 @@
     </div>
   <sidebar/>
   <modulemore/>
+  <infoModul/>
   </div>
 </template>
 
@@ -77,6 +79,7 @@
 import Sidebar from '../components/Sidebar.vue'
 import modulemore from '../components/Modulemore.vue'
 import db from '../firebaseInit'
+import infoModul from '../components/infoModul'
 
 export default {
   name: 'home',
@@ -88,11 +91,15 @@ export default {
   },
   components: {
     Sidebar,
-    modulemore
+    modulemore,
+    infoModul
   },
   methods: {
     modalInfo () {
       document.querySelector('.wrapperModule').classList.add('moduleActive')
+    },
+    modulContact () {
+      document.querySelector('.infoWrap').classList.add('infoWrapActive')
     },
     sendMessage () {
       db.collection('chat').add({
@@ -137,6 +144,8 @@ export default {
   flex-direction: row-reverse;
   overflow: hidden;
   max-height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
   // position: fixed;
   .mainChat{
     // background-color: khaki;
@@ -154,6 +163,7 @@ export default {
       position: fixed;
       display: flex;
       box-sizing: border-box;
+      cursor: pointer;
       .personProfile{
         // background-color: skyblue;
         width: 500px;
@@ -216,7 +226,7 @@ export default {
         justify-content: center;
         align-items: center;
         position: relative;
-        cursor: pointer;
+        opacity: .7;
         .personLocation{
           width: 50px;
           height: 50px;
@@ -293,7 +303,7 @@ export default {
           .toChat{
             background-color: rgb(255, 255, 255);
             box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
-            border-radius: 10px;
+            border-radius: 7px;
             // width: 300px;
             // height: 50px;
             padding-left: 10px;
@@ -301,6 +311,16 @@ export default {
             // padding-top: 2px;
             p{
               text-align: left;
+            }
+          }
+          .timeChatting{
+            width: 50px;
+            height: 30px;
+            p{
+              font-size: airbnbmedium;
+              font-size: 10px;
+              font-weight: 600;
+              color: gray;
             }
           }
         }
@@ -464,6 +484,7 @@ export default {
               font-size: 13px;
               font-weight: 100;
               line-height: 10px;
+              color: rgba(0, 0, 0, 0.650);
             }
           }
         }

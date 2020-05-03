@@ -100,6 +100,9 @@ export default {
       border-bottom: 1px solid #F7C5C4;
       width: 300px;
       height: 40px;
+      p{
+      font-family: airbnbmedium;
+    }
     }
     .signGoogle{
       background-color: #D5EEE9;

@@ -8,7 +8,7 @@
         </router-link>
       </div>
       <div class="chat">
-        <img src="../assets/img/conversation.png">
+        <img src="../assets/img/message.png">
       </div>
       <div class="setting">
         <router-link to="/setting">
@@ -74,6 +74,7 @@ export default {
     width: 100%;
     height: 85%;
     flex-direction: column;
+    opacity: .7;
     .home{
       // background-color: greenyellow;
       display: flex;
@@ -126,6 +127,7 @@ export default {
     display: flex;
     align-items: flex-end;
     cursor: pointer;
+    opacity: .9;
     .quit{
       // background-color: indigo;
       display: flex;
@@ -137,8 +139,8 @@ export default {
       cursor: pointer;
       img{
         object-fit: contain;
-        width: 40%;
-        height: 40%;
+        width: 45%;
+        height: 45%;
         transform: rotate(180deg);
       }
     }
