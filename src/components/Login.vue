@@ -7,7 +7,7 @@
       <input type="email" placeholder="Input Your Email" v-model="email">
       <input type="password" placeholder="Input Your Password" v-model="password">
       <div class="signGoogle">
-        <div class="googleLogo">
+        <div @click="loginGoogle" class="googleLogo">
           <img src="../assets/img/icons8-google-30.png" width="25px" height="25px">
           <p>Sign in with google account</p>
         </div>
@@ -27,13 +27,22 @@ export default {
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      displayName: '',
+      imageProfil: ''
     }
   },
   methods: {
     login (e) {
       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .then(user => {
+          firebase.firestore().collection('user').doc(firebase.auth().currentUser.uid)
+            .set({
+              email: this.email,
+              displayName: this.displayName,
+              imageProfil: this.imageProfil,
+              phoneNumber: 0
+            })
           alert(`welcome ${this.email}`)
           this.$router.push('/home')
         },
@@ -42,6 +51,33 @@ export default {
         }
         )
       e.preventDefault()
+    },
+    loginGoogle () {
+      const provider = new firebase.auth.GoogleAuthProvider()
+      provider.addScope('https://www.googleapis.com/auth/contacts.readonly')
+      firebase.auth().signInWithPopup(provider).then(result => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        // eslint-disable-next-line no-unused-vars
+        var token = result.credential.accessToken
+        // The signed-in user info.
+        // eslint-disable-next-line no-unused-vars
+        var user = result.user
+        // ...
+        this.$router.push('/home')
+      }).catch(function (error) {
+        // Handle Errors here.
+        // eslint-disable-next-line no-unused-vars
+        var errorCode = error.code
+        // eslint-disable-next-line no-unused-vars
+        var errorMessage = error.message
+        // The email of the user's account used.
+        // eslint-disable-next-line no-unused-vars
+        var email = error.email
+        // The firebase.auth.AuthCredential type that was used.
+        // eslint-disable-next-line no-unused-vars
+        var credential = error.credential
+        // ...
+      })
     }
   }
 }

@@ -3,9 +3,9 @@
     <div class="mainChat">
       <div class="navChat">
         <div class="personProfile">
-          <div class="personPicture">
+          <!-- <div class="personPicture">
             <img src="../assets/img/foto_ig.jpg">
-          </div>
+          </div> -->
           <div class="contactParent">
             <div class="contactName">
               <h1>Muhammad Yusuf</h1>
@@ -16,9 +16,6 @@
           </div>
         </div>
         <div class="personInfo">
-          <div class="personLocation">
-            <img src="../assets/img/maps-and-flags.svg" width="20px" height="20px">
-          </div>
           <div class="addPerson">
             <img src="../assets/img/icons8-add-user-male-32.png" width="23px" height="23px">
           </div>
@@ -26,16 +23,21 @@
             <img src="../assets/img/icons8-search-60.png" width="23px" height="23px">
           </div>
           <div @click="modulContact" class="more">
-            <img src="../assets/img/icons8-more-40.png" width="23px" height="23px">
+            <img  v-if="photo==null" src="../assets/img/icons8-more-40.png" width="23px" height="23px">
+            <!-- <img  v-else :src="../assets/img/icons8-more-40.png" width="23px" height="23px"> -->
           </div>
         </div>
       </div>
       <div class="personalBodyChat">
         <div class="personalBodyChatWrap">
-          <div v-for="message in messages" :key="message" class="personalChatting">
-            <div class="toChat"><p>{{ message.message }}</p></div>
-            <div class="timeChatting"><p>{{ message.createdAt }}</p></div>
+          <div v-for="message in messages" :key="message" :class="[message.author==authUser.email?'personalChatting-right':'personalChatting']">
+            <div :class="[message.author==authUser.email?'toChat-right':'toChat']"><p>{{ message.message }}</p></div>
+            <div :class="[message.author==authUser.email?'timeChatting-right':'timeChatting']"><p>{{ message.time }}</p></div>
           </div>
+          <!-- <div class="personalChatting-right">
+            <div class="toChat-right"><p> tes </p></div>
+            <div class="timeChatting-right"><p>22:10</p></div>
+          </div> -->
           <div class="bodyChatSend">
             <div class="attachment">
               <img src="../assets/img/icons8-lol-50.png" width="30px" height="30px">
@@ -59,13 +61,14 @@
       </div>
       <div v-for="chat in 1" :key="chat" class="bodyChat">
         <div class="people">
-          <div class="photo">
+          <!-- <div class="photo">
             <img src="../assets/img/foto_ig.jpg">
-          </div>
+            <img :src="user[0].image" alt="photo">
+          </div> -->
           <div class="peopleName">
             <div class="personName"><h2>Muhammad Yusuf</h2></div>
             <div class="personChat"> <p>{{ messages[messages.length-1].message }}</p></div>
-            <div class="personTime"><p>22:20</p></div>
+            <div class="timeChatting"><p></p></div>
           </div>
         </div>
       </div>
@@ -81,13 +84,15 @@ import Sidebar from '../components/Sidebar.vue'
 import modulemore from '../components/Modulemore.vue'
 import db from '../firebaseInit'
 import infoModul from '../components/infoModul'
+import firebase from 'firebase'
 
 export default {
   name: 'home',
   data () {
     return {
       msg: null,
-      messages: []
+      messages: [],
+      authUser: {}
     }
   },
   components: {
@@ -96,6 +101,10 @@ export default {
     infoModul
   },
   methods: {
+    scrollToBottom () {
+      const box = document.querySelector('personalBodyChat')
+      box.scrollTop = box.scrollHeight
+    },
     modalInfo () {
       document.querySelector('.wrapperModule').classList.add('moduleActive')
     },
@@ -103,25 +112,52 @@ export default {
       document.querySelector('.infoWrap').classList.add('infoWrapActive')
     },
     sendMessage () {
+      const date = new Date()
       db.collection('chat').add({
         message: this.msg,
-        createdAt: new Date()
+        author: this.authUser.email,
+        createdAt: new Date(),
+        time: `${date.getHours()}:${date.getMinutes()}`
       })
+        .then(() => {
+          this.scrollToBottom()
+        })
       this.msg = null
     },
     fetchMessage () {
       db.collection('chat').orderBy('createdAt').onSnapshot((querySnapshot) => {
-        // console.log(querySnapshot)
         const allMessage = []
         querySnapshot.forEach(doc => {
           allMessage.push(doc.data())
         })
         this.messages = allMessage
+        setTimeout(() => {
+          this.scrollToBottom()
+        }, 1000)
       })
     }
   },
   created () {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.authUser = user
+      } else {
+        this.authUser = {}
+      }
+    })
+    console.log(this.authUser.email)
     this.fetchMessage()
+  },
+  beforeRouteEnter (to, from, next) {
+    next((vm) => {
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          next()
+        } else {
+          vm.$router.push('/')
+        }
+      })
+    })
   }
 }
 </script>
@@ -315,8 +351,8 @@ export default {
             }
           }
           .timeChatting{
-            width: 50px;
-            height: 30px;
+            // width: 100px;
+            // height: 30px;
             p{
               font-size: airbnbmedium;
               font-size: 10px;
@@ -374,6 +410,37 @@ export default {
             justify-content: center;
             align-items: center;
             cursor: pointer;
+          }
+        }
+        .personalChatting-right{
+          display: flex;
+          justify-content: flex-end;
+          flex-direction: column;
+          align-items: flex-end;
+          margin-right: 10px;
+          .toChat-right{
+            background-color: rgb(255, 255, 255);
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.26);
+            border-radius: 7px;
+            // width: 300px;
+            // height: 50px;
+            padding-left: 10px;
+            padding-right: 10px;
+            // padding-top: 2px;
+            p{
+              text-align: left;
+            }
+          }
+          .timeChatting-right{
+            // width: 100px;
+            // height: 30px;
+            p{
+              font-size: airbnbmedium;
+              font-size: 10px;
+              font-weight: 600;
+              color: gray;
+              padding-left: 10px;
+            }
           }
         }
       }

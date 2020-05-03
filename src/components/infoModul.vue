@@ -8,24 +8,29 @@
     </div>
     <div class="bodyInfo">
       <div class="bodyHeader">
-        <img src="../assets/img/foto_ig.jpg">
+        <!-- <img @click="$emit('containerModal')" :src="user[0].image" alt="photo-profile"
+      v-if="photo==null">
+      <img @click="$emit('containerModal')" :src="photo" alt="photo-profile" v-else> -->
+        <!-- <img src="../assets/img/foto_ig.jpg"> -->
+        <img :src="user[0].image" alt="photo">
         <p>Muhammad Yusuf</p>
+        <input type="file" accept="image/*" @change="save">
       </div>
       <div class="bodyMap">
         <div style="max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between">
             <div>
-                <h1>coordinates:</h1>
+                <h1>coordinates</h1>
                 <p>{{ myCoordinates.lat }} Latitude, {{ myCoordinates.lng }} Longitude</p>
             </div>
             <div>
-                <h1>Map coordinates:</h1>
+                <h1>Map coordinates</h1>
                 <p>{{ mapCoordinates.lat }} Latitude, {{ mapCoordinates.lng }} Longitude</p>
             </div>
         </div>
         <GmapMap
             :center="myCoordinates"
             :zoom="zoom"
-            style="width:300px; height:300px; margin: 32px auto;"
+            style="width:100%; height:300px; margin: 32px auto;"
             ref="mapRef"
             @dragend="handleDrag"
         ></GmapMap>
@@ -35,9 +40,17 @@
 </template>
 
 <script>
+import firebase from 'firebase'
+import db from '../firebaseInit'
+
 export default {
   data () {
     return {
+      email: firebase.auth().currentUser.email,
+      user: [],
+      photo: null,
+      imageData: null,
+      picture: null,
       map: null,
       myCoordinates: {
         lat: 0,
@@ -62,6 +75,7 @@ export default {
     if (localStorage.zoom) {
       this.zoom = parseInt(localStorage.zoom)
     }
+    this.profile()
   },
   mounted () {
     // add the map to a data object
@@ -82,6 +96,34 @@ export default {
       const zoom = this.map.getZoom()
       localStorage.center = JSON.stringify(center)
       localStorage.zoom = zoom
+    },
+    profile () {
+      db.collection('user').where('email', '==', this.email).onSnapshot((querySnapshot) => {
+        const myprofil = []
+        querySnapshot.forEach((doc) => {
+          myprofil.push(doc.data())
+        })
+        this.user = myprofil
+      })
+    },
+    save (event) {
+      // eslint-disable-next-line prefer-destructuring
+      this.imageData = event.target.files[0]
+      this.picture = null
+      const storageRef = firebase.storage().ref(`profil/${this.imageData.name}`).put(this.imageData)
+      storageRef.on('state_changed', (snapshot) => {
+        this.uploadValue = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+      }, (error) => { console.log(error.message) },
+      () => {
+        this.uploadValue = 100
+        storageRef.snapshot.ref.getDownloadURL().then((url) => {
+          this.picture = url
+          firebase.firestore().collection('user').doc(firebase.auth().currentUser.uid)
+            .update({
+              image: url
+            })
+        })
+      })
     }
   },
   computed: {
