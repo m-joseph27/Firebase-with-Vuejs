@@ -56,9 +56,9 @@
       <div class="headChat">
         <h1>Alphabet</h1>
       </div>
-      <div class="search">
+      <!-- <div class="search">
         <input type="text" placeholder="search">
-      </div>
+      </div> -->
       <div v-for="chat in 1" :key="chat" class="bodyChat">
         <div class="people">
           <!-- <div class="photo">
@@ -496,6 +496,7 @@ export default {
       flex-direction: column;
       align-items: center;
       box-shadow: -5px 5px 5px rgba(167, 165, 165, 0.562);
+      margin-top: 30px;
       .people{
         // background-color: rgb(255, 255, 255);
         width: 95%;
@@ -527,6 +528,7 @@ export default {
           // background-color: saddlebrown;
           width: 75%;
           height: 100%;
+          // margin-top: 30px;
           display: flex;
           flex-direction: column;
           padding-left: 20px;

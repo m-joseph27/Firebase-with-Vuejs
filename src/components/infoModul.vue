@@ -13,7 +13,7 @@
       <img @click="$emit('containerModal')" :src="photo" alt="photo-profile" v-else> -->
         <!-- <img src="../assets/img/foto_ig.jpg"> -->
         <img :src="user[0].image" alt="photo">
-        <p>Muhammad Yusuf</p>
+        <p>{{ user[0].displayName }}</p>
         <input type="file" accept="image/*" @change="save">
       </div>
       <div class="bodyMap">

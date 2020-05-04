@@ -4,9 +4,9 @@
       <p>Sign Up</p>
     </div>
     <div class="body">
-      <input type="text" placeholder="Input yout Name" v-model="displayName">
-      <input type="email" placeholder="Input Your Email" v-model="email">
-      <input type="password" placeholder="Input Your Password" v-model="password">
+      <input type="text" placeholder="Name" v-model="displayName">
+      <input type="email" placeholder="Email" v-model="email">
+      <input type="password" placeholder="Password" v-model="password">
       <div @click="loginGoogle" class="signGoogle">
         <div class="googleLogo">
           <img src="../assets/img/icons8-google-30.png" width="25px" height="25px">
