@@ -36,7 +36,7 @@ export default {
         lat: 0,
         lng: 0
       },
-      zoom: 7
+      zoom: 5
     }
   },
   created () {
