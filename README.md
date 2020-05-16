@@ -31,19 +31,19 @@
 <div class="demo">
     <div class="items">
     	<h4 class="title-demo">Landing Page</h4>
-		<img class="img-demo" src="https://user-images.githubusercontent.com/37394664/78219692-3d6dd980-74ea-11ea-8c3a-a032edd3f864.png">  
+	<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/blob/master/src/Screenshot/landing-page.jpeg">   
     </div>
     <div class="items">
     	<h4 class="title-demo">Login</h4>
-		<img class="img-demo" src="https://user-images.githubusercontent.com/37394664/78219854-99386280-74ea-11ea-86bd-50ce43a3d18e.png">  
+		<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/blob/master/src/Screenshot/login.jpeg">  
     </div>
     <div class="items">
     	<h4 class="title-demo">Home Page</h4>
-		<img class="img-demo" src="https://user-images.githubusercontent.com/37394664/78219865-9f2e4380-74ea-11ea-8763-8fce7ff5300a.png">  
+		<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/blob/master/src/Screenshot/home.jpeg">  
     </div>
     <div class="items">
     	<h4 class="title-demo">Contact Info</h4>
-		<img class="img-demo" src="https://user-images.githubusercontent.com/37394664/78219879-a48b8e00-74ea-11ea-820c-4a7356c6f3c9.png">  
+		<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/blob/master/src/Screenshot/contact-info.jpeg">  
     </div>
 </div>
 </section>
