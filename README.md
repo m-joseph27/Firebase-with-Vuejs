@@ -1,74 +1,36 @@
-<section id="home">
-	
-<h1 align="center">Hayuu Cafe Front-end</h1>
+<h1 align="center">ReactNative Hayuu Chat</h1>
+<p align="left">
+  Build with Vue.js and Realtime Database Firebase
+</p>
 
-Hayuu cafe is an application to manage sales at hayuu cafe, build with ReactJS.
-</section>
+## Table of Contents
 
-#### Table Of Content
-<div class="header">
-	<ul>
-		<li><a href="#requirements">requirements</a></li>
-		<li><a href="#how-to-run">How To Run</a></li>
-		<li><a href="#screenshoot">Screenshoot</a></li>
-		<li><a href="#related-project">Related Project</a></li>
-		<li class="app"><a href="http://bit.ly/hayuu-cafe" target="_blank">go to app</a></li>
-	</ul>
-</div>
+- [Introduction](#introduction)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Usage](#usage-for-development)
+- [Demo](#demo)
+- [Release APK](#release-apk)
+## Introduction
+<b>Alphabet.id</b> is a realtime web chat application to keep connect with your friends.
 
-<section id="requirements">
-	
+## Features
+* Users must create account before use app
+* Next step Login and go to Home
+* Users can add friend and chat with friend
+* And others
+
 ## Requirements
 * [`npm`](https://www.npmjs.com/get-npm)
-* [`React Js`](https://reactjs.org/docs/getting-started.html)
-* [`react-bootsrap`](https://react-bootstrap.github.io)
-* [`sweetalert`](https://sweetalert.js.org/)
-</section>
+* [`Vue.js`](https://vuejs.org/)
+* [`vue-cli-service`](https://cli.vuejs.org/)
 
-<section id="how-to-run">
-	
-## How To Run
-1. Open your terminal or command prompt
-2. Type `git clone https://github.com/misrudin/Front-end-PointOfSales.git`
-3. Open the folder and type `npm install` for install dependencies
-	#### Setup .env
-		Open .env file on your favorite code editor, and copy paste this code below :
-		```
-		REACT_APP_URL="http://localhost:4001/api/v1/"
-		```
-4. type `npm start` for run dependencies
-</section>
-
-<section id="screenshoot">
-	
-## Screenshoot
-<div class="demo">
-    <div class="items">
-    	<h4 class="title-demo">Login Page</h4>
-		<img class="img-demo" src="https://user-images.githubusercontent.com/37394664/78219692-3d6dd980-74ea-11ea-8c3a-a032edd3f864.png">  
-    </div>
-    <div class="items">
-    	<h4 class="title-demo">Home Page</h4>
-		<img class="img-demo" src="https://user-images.githubusercontent.com/37394664/78219854-99386280-74ea-11ea-86bd-50ce43a3d18e.png">  
-    </div>
-    <div class="items">
-    	<h4 class="title-demo">History</h4>
-		<img class="img-demo" src="https://user-images.githubusercontent.com/37394664/78219865-9f2e4380-74ea-11ea-8763-8fce7ff5300a.png">  
-    </div>
-    <div class="items">
-    	<h4 class="title-demo">Add Product</h4>
-		<img class="img-demo" src="https://user-images.githubusercontent.com/37394664/78219879-a48b8e00-74ea-11ea-820c-4a7356c6f3c9.png">  
-    </div>
-    <div class="items">
-    	<h4 class="title-demo">Add Category</h4>
-		<img class="img-demo" src="https://user-images.githubusercontent.com/37394664/78219872-a1909d80-74ea-11ea-8a9e-6152127c8f41.png">  
-    </div>
+## Demo
+<div align="center">
+    <img width="250" src="https://user-images.githubusercontent.com/37394664/76815543-7c383a00-6830-11ea-8b66-fb1c13fe68c4.gif">   
 </div>
-</section>
 
-<section id="related-project">
-	
-## Related Project
-* [`Hayuu-Cafe-Backend`](https://github.com/misrudin/NodeWithExpress-backend-PointOfSales.git)
-* [`Hayuu-Cafe-Mobile`](https://github.com/misrudin/PosReactNative.git)
-</section>
+## Release APK (version.0.0.1)
+<a href="https://drive.google.com/file/d/1Y4jeyxXYm_N8B5nuhO4Q0fYh082kL43T/view?usp=sharing">
+  <img src="https://img.shields.io/badge/Download%20on%20the-Google%20Drive-orange.svg?style=popout&logo=google-drive"/>
+</a>
