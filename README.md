@@ -31,7 +31,7 @@
 <div class="demo">
     <div class="items">
     	<h4 class="title-demo">Landing Page</h4>
-		<img class="img-demo" ![](images/landing-page.jpeg)>  
+	![](images/landing-page.jpeg)  
     </div>
     <div class="items">
     	<h4 class="title-demo">Login</h4>
