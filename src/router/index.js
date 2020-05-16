@@ -25,7 +25,7 @@ const routes = [
     component: Landingpage,
     meta: {
       requiresGuest: true,
-      title: 'most populer web chat app |Alphabet.id'
+      title: 'Most Populer Web Chat App |Alphabet.id'
     }
   },
   {
