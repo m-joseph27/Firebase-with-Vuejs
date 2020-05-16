@@ -29,19 +29,19 @@
 <div class="demo">
     <div class="items">
     	<h4 class="title-demo">Landing Page</h4>
-	<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/blob/master/src/Screenshot/landing-page.jpeg">   
+	<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/blob/master/src/Screenshot/landing-page.png">   
     </div>
     <div class="items">
     	<h4 class="title-demo">Login</h4>
-		<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/blob/master/src/Screenshot/login.jpeg">  
+		<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/blob/master/src/Screenshot/login.png">  
     </div>
     <div class="items">
     	<h4 class="title-demo">Home Page</h4>
-		<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/blob/master/src/Screenshot/home.jpeg">  
+		<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/blob/master/src/Screenshot/home-page.png">  
     </div>
     <div class="items">
     	<h4 class="title-demo">Contact Info</h4>
-		<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/blob/master/src/Screenshot/contact-info.jpeg">  
+		<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/blob/master/src/Screenshot/contact-info.png">  
     </div>
 </div>
 </section>
