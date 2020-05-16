@@ -31,7 +31,7 @@
 <div class="demo">
     <div class="items">
     	<h4 class="title-demo">Landing Page</h4>
-		<img class="img-demo" src="https://user-images.githubusercontent.com/37394664/78219692-3d6dd980-74ea-11ea-8c3a-a032edd3f864.png">  
+		<img class="img-demo" ![](images/landing-page.jpeg)>  
     </div>
     <div class="items">
     	<h4 class="title-demo">Login</h4>
