@@ -9,14 +9,12 @@
 - [Features](#features)
 - [Requirements](#requirements)
 - [Screenshot](#screenshot)
-- [Release APK](#release-apk)
 
 ## Introduction
 <b>Alphabet.id</b> is a realtime web chat application to keep connect with your friends.
 
 ## Features
 * Users must create account before use app
-* Next step Login and go to Home
 * Users can add friend and chat with friend
 * And others
 
