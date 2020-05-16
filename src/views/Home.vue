@@ -169,7 +169,7 @@ export default {
 }
 @font-face{
   font-family: airbnbmedium;
-  src: url('../assets/fonts/AirbnbCerealMedium.ttf');
+  src: url("../assets/fonts/AirbnbCerealMedium.ttf");
 }
 .wrapper{
   // background-color: #EBF4FC;

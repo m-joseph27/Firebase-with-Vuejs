@@ -1,7 +1,9 @@
 <template>
   <div class="sidebar">
     <div class="top-wrapper">
-      <div class="home"></div>
+      <div class="home">
+        <img src="../assets/img/foto_ig.jpg" alt="profile-pic">
+      </div>
       <div class="menu">
         <router-link to="/menu">
           <img src="../assets/img/menu.png">
@@ -23,7 +25,7 @@
     </div>
     <div class="bottom-wrapper">
       <div @click="logout" class="quit">
-          <img id="button" src="../assets/img/quit.svg">
+          <img id="button" src="../assets/img/logout.png">
       </div>
     </div>
   </div>
@@ -61,12 +63,13 @@ export default {
   // background: linear-gradient(50deg, red, blue);
   background: linear-gradient(#CFE9E5,#e2e2e2);
   // border-radius: 0 60px;
-  width: 80px;
+  width: 90px;
   height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.26);
+  position: relative;
   cursor: pointer;
   .top-wrapper{
     // background-color: #fff;
@@ -74,15 +77,24 @@ export default {
     width: 100%;
     height: 85%;
     flex-direction: column;
-    opacity: .7;
     .home{
-      // background-color: greenyellow;
+      background-color: greenyellow;
       display: flex;
-      width: 100%;
-      height: 90px;
+      width: 70px;
+      height: 70px;
+      margin-left: 5px;
+      margin-top: 20px;
+      border-radius: 100%;
+      overflow: hidden;
+      img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
     }
     .menu{
       // background-color: hotpink;
+      margin-top: 30px;
       display: flex;
       width: 100%;
       height: 70px;
@@ -135,7 +147,6 @@ export default {
       height: 70px;
       justify-content: center;
       align-items: center;
-      padding-right: 15px;
       cursor: pointer;
       img{
         object-fit: contain;

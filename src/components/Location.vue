@@ -92,14 +92,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@font-face{
-  font-family: airbnb;
-  src: url('../assets/fonts/AirbnbCerealBold.ttf');
-}
-@font-face{
-  font-family: airbnbmedium;
-  src: url('../assets/fonts/AirbnbCerealMedium.ttf');
-}
+// @font-face{
+//   font-family: airbnb;
+//   src: url('../assets/fonts/AirbnbCerealBold.ttf');
+// }
+// @font-face{
+//   font-family: airbnbmedium;
+//   src: url('../assets/fonts/AirbnbCerealMedium.ttf');
+// }
 
 .locationParent{
   width: 100vw;

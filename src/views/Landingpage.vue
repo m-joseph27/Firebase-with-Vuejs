@@ -44,11 +44,11 @@ export default {
 <style lang="scss" scoped>
 @font-face{
   font-family: airbnb;
-  src: url('../assets/fonts/AirbnbCerealBold.ttf');
+  src: url("../assets/fonts/AirbnbCerealBold.ttf");
 }
 @font-face{
   font-family: airbnbmedium;
-  src: url('../assets/fonts/AirbnbCerealMedium.ttf');
+  src: url("../assets/fonts/AirbnbCerealMedium.ttf");
 }
 
 .loginParent{
