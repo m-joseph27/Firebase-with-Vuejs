@@ -4,6 +4,22 @@
   </div>
 </template>
 
+<script>
+export default {
+  watch: {
+    $route: {
+      handler: (to) => {
+        document.title = to.meta.title || 'Aplhabet.id'
+      },
+      immediate: true
+    }
+  }
+}
+</script>
+export default {
+
+}
+
 <style>
 html, body{
   margin: 0;

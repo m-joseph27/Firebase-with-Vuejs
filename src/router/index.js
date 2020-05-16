@@ -15,7 +15,8 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'Alphabet.id'
     }
   },
   {
@@ -23,23 +24,27 @@ const routes = [
     name: 'Landing',
     component: Landingpage,
     meta: {
-      requiresGuest: true
+      requiresGuest: true,
+      title: 'most populer web chat app |Alphabet.id'
     }
   },
   {
     path: '/setting',
     name: 'Setting',
-    component: Settting
+    component: Settting,
+    title: 'setting |Alphabet.id'
   },
   {
     path: '/menu',
     name: 'Menu',
-    component: Menu
+    component: Menu,
+    title: 'Menu |Alphabet.id'
   },
   {
     path: '/location',
     name: 'Location',
-    component: Location
+    component: Location,
+    title: 'Location |Alphabet.id'
   }
 ]
 
