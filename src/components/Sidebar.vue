@@ -2,7 +2,7 @@
   <div class="sidebar">
     <div class="top-wrapper">
       <div class="home">
-        <img src="../assets/img/foto_ig.jpg" alt="profile-pic">
+        <img src="../assets/img/foto-cv.jpg" alt="profile-pic">
       </div>
       <div class="menu">
         <router-link to="/menu">
