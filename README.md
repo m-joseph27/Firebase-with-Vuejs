@@ -31,11 +31,11 @@
 <div class="demo">
     <div class="items">
     	<h4 class="title-demo">Landing Page</h4>
-	![](images/landing-page.jpeg)  
+	<img class="img-demo" src="https://user-images.githubusercontent.com/37394664/78219854-99386280-74ea-11ea-86bd-50ce43a3d18e.png">   
     </div>
     <div class="items">
     	<h4 class="title-demo">Login</h4>
-		<img class="img-demo" src="https://user-images.githubusercontent.com/37394664/78219854-99386280-74ea-11ea-86bd-50ce43a3d18e.png">  
+		<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/blob/master/src/Screenshot/landing-page.jpeg">  
     </div>
     <div class="items">
     	<h4 class="title-demo">Home Page</h4>
