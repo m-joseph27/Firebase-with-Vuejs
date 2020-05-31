@@ -322,6 +322,7 @@ export default {
       margin-top: 65px;
       display: flex;
       align-items: flex-end;
+      overflow: hidden;
       .personalBodyChatWrap{
         display: flex;
         width: 100%;
