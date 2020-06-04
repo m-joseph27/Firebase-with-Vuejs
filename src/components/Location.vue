@@ -1,6 +1,6 @@
 <template>
   <div class="locationParent">
-    <div class="secondNav"><h1>Alphabet.</h1>
+    <div class="secondNav"><h1>Alphabet</h1>
       <router-link to="/home">
         <img src="../assets/img/arrow-left.svg" width="30px" height="30px">
       </router-link>
@@ -108,11 +108,16 @@ export default {
   flex-direction: column;
   .secondNav{
     // background: linear-gradient(#CFE9E5,#dd99b5);
-    background-color: #dd99b5;
-    box-shadow: 10px 10px 10px rgba(124, 123, 123, 0.849);
+    // background: linear-gradient(#dd99b5 ,rgb(187, 204, 219) );
+    background-color: #CFE9E5;
+    border-bottom: 1px solid rgba(124, 123, 123, 0.849);
+    // box-shadow: 10px 10px 10px rgba(124, 123, 123, 0.849);
     width: 100%;
     height: 10%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     h1{
       font-family: airbnbmedium;
     }
@@ -124,7 +129,7 @@ export default {
   }
   .currentLocation{
     // background-color: tan;
-    background: linear-gradient(#CFE9E5,#e2e2e2);
+    // background: linear-gradient(#CFE9E5,#e2e2e2);
     width: 100%;
     height: 90%;
   }
