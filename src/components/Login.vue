@@ -99,7 +99,7 @@ export default {
   transition: ease .5s;
   background-color: white;
   width: 400px;
-  height: 400px;
+  height: 450px;
   position: absolute;
   right: 150px;
   top: 120px;
@@ -144,7 +144,7 @@ export default {
       background-color: #D5EEE9;
       width: 310px;
       height: 45px;
-      margin-top: 150px;
+      margin-top: 170px;
       border-radius: 5px;
       display: flex;
       padding-left: 30px;
@@ -166,12 +166,9 @@ export default {
     }
   }
   .bottom{
-    // background-color: aquamarine;
     width: 100%;
     height: 15%;
     display: flex;
-    // justify-content: space-around;
-    align-items: center;
     justify-content: center;
     button{
       cursor: pointer;
@@ -182,7 +179,6 @@ export default {
       border-radius: 5px;
       font-family: airbnbmedium;
       color: #556778;
-      // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
       font-size: 15px;
       background: #FCCECB;
       font-weight: bold;

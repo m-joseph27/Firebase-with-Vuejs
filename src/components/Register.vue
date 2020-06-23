@@ -102,7 +102,7 @@ export default {
   transition: ease .5s;
   background-color: white;
   width: 400px;
-  height: 400px;
+  height: 450px;
   position: absolute;
   right: 150px;
   top: 120px;

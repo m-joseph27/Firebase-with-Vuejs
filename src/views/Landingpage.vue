@@ -1,7 +1,7 @@
 <template>
   <div class="loginParent">
     <div class="loginForm">
-      <img src="../assets/img/pink-corded-headphones-on-pink-and-teal-wall-1037996.jpg">
+      <img src="../assets/img/main-foto.jpg">
       <div class="navLogin">
         <div class="welcome">
           <img src="../assets/img/welcome.png">
@@ -106,7 +106,7 @@ export default {
         width: 400px;
         height: 200px;
         position: absolute;
-        top: 300px;
+        top: 370px;
         img{
           object-fit: contain;
         }

@@ -1,8 +1,8 @@
 <template>
   <div class="menuParent">
-    <h1>Sebenernya ini halaman utama tapi lagi nyari - nyari ide dulu</h1>
+    <h1>Under Develeping</h1>
     <router-link to="/home">
-      <button>Balik lagi</button>
+      <button>back</button>
     </router-link>
   </div>
 </template>

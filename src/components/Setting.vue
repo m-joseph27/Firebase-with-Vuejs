@@ -1,6 +1,6 @@
 <template>
   <div class="settingParent">
-    <h1>Halaman setting nya lagi di pikirin juga</h1>
+    <div class="setting"><h1>Under developing</h1></div>
     <router-link to="/home">
       <button> Balik lagi</button>
     </router-link>
@@ -14,5 +14,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.settingParent{
+  background: linear-gradient(#CFE9E5,#e2e2e2);
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  .setting{
+    position: absolute;
+    top: 45%;
+    left: 40%;
+  }
+  button{
+    position: absolute;
+    top: 55%;
+    left: 45%;
+  }
+}
 
 </style>

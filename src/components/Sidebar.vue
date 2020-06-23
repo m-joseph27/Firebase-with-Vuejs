@@ -2,30 +2,30 @@
   <div class="sidebar">
     <div class="top-wrapper">
       <div class="home">
-        <img src="../assets/img/foto-cv.jpg" alt="profile-pic">
+        <img src="../assets/img/default-profile.png" alt="profile-pic">
       </div>
       <div class="menu">
         <router-link to="/menu">
-          <img src="../assets/img/menu.png">
+          <img src="../assets/img/menu.png" alt="menu">
         </router-link>
       </div>
       <div class="chat">
-        <img src="../assets/img/message.png">
+        <img src="../assets/img/message.png" alt="message-body">
       </div>
       <div class="setting">
         <router-link to="/setting">
-          <img src="../assets/img/settings.png">
+          <img src="../assets/img/settings.png" alt="setting">
         </router-link>
       </div>
       <div class="selfLocation">
         <router-link to="/location">
-          <img src="../assets/img/maps-and-flags.svg" width="30px" height="30px">
+          <img src="../assets/img/maps-and-flags.svg" width="30px" height="30px" alt="location">
         </router-link>
       </div>
     </div>
     <div class="bottom-wrapper">
       <div @click="logout" class="quit">
-          <img id="button" src="../assets/img/logout.png">
+          <img id="button" src="../assets/img/logout.png" alt="log-out">
       </div>
     </div>
   </div>
@@ -58,11 +58,7 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar{
-  // background: linear-gradient(#08e64b, #d3c012);
-  // background: linear-gradient(120deg, rgb(46, 233, 9), blue);
-  // background: linear-gradient(50deg, red, blue);
   background: linear-gradient(#CFE9E5,#e2e2e2);
-  // border-radius: 0 60px;
   width: 90px;
   height: 100vh;
   overflow: hidden;
@@ -72,13 +68,13 @@ export default {
   position: relative;
   cursor: pointer;
   .top-wrapper{
-    // background-color: #fff;
     display: flex;
     width: 100%;
     height: 85%;
     flex-direction: column;
     .home{
-      background-color: greenyellow;
+      background: linear-gradient(#CFE9E5,#e2e2e2);
+      // background-color: #fff;
       display: flex;
       width: 70px;
       height: 70px;

@@ -16,7 +16,7 @@ const routes = [
     component: Home,
     meta: {
       requiresAuth: true,
-      title: 'Alphabet.id'
+      title: 'Alphabet.id | Most populer web chat app'
     }
   },
   {
