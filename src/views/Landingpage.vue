@@ -106,7 +106,7 @@ export default {
         width: 400px;
         height: 200px;
         position: absolute;
-        top: 370px;
+        top: 350px;
         img{
           object-fit: contain;
         }
