@@ -19,7 +19,7 @@
         <GmapMap
             :center="myCoordinates"
             :zoom="zoom"
-            style="width:640px; height:360px; margin: 32px auto;"
+            style="width:1000px; height:400px; margin: 32px auto;"
             ref="mapRef"
             @dragend="handleDrag"
         ></GmapMap>
@@ -106,12 +106,10 @@ export default {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(#CFE9E5,#e2e2e2);
   .secondNav{
-    // background: linear-gradient(#CFE9E5,#dd99b5);
-    // background: linear-gradient(#dd99b5 ,rgb(187, 204, 219) );
     background-color: #CFE9E5;
     border-bottom: 1px solid rgba(124, 123, 123, 0.849);
-    // box-shadow: 10px 10px 10px rgba(124, 123, 123, 0.849);
     width: 100%;
     height: 10%;
     position: relative;

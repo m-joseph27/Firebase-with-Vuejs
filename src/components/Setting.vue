@@ -2,7 +2,7 @@
   <div class="settingParent">
     <div class="setting"><h1>Under developing</h1></div>
     <router-link to="/home">
-      <button> Balik lagi</button>
+      <button>back</button>
     </router-link>
   </div>
 </template>
