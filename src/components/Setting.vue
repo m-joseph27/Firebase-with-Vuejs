@@ -27,7 +27,7 @@ export default {
   button{
     position: absolute;
     top: 55%;
-    left: 45%;
+    left: 47%;
   }
 }
 
