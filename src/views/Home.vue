@@ -3,9 +3,6 @@
     <div class="mainChat">
       <div class="navChat">
         <div class="personProfile">
-          <!-- <div class="personPicture">
-            <img src="../assets/img/foto_ig.jpg">
-          </div> -->
           <div class="contactParent">
             <div class="contactName">
               <h1>Muhammad Yusuf</h1>
@@ -24,7 +21,6 @@
           </div>
           <div @click="modulContact" class="more">
             <img  v-if="photo==null" src="../assets/img/icons8-more-40.png" width="23px" height="23px">
-            <!-- <img  v-else :src="../assets/img/icons8-more-40.png" width="23px" height="23px"> -->
           </div>
         </div>
       </div>
@@ -34,10 +30,6 @@
             <div :class="[message.author==authUser.email?'toChat-right':'toChat']"><p>{{ message.message }}</p></div>
             <div :class="[message.author==authUser.email?'timeChatting-right':'timeChatting']"><p>{{ message.time }}</p></div>
           </div>
-          <!-- <div class="personalChatting-right">
-            <div class="toChat-right"><p> tes </p></div>
-            <div class="timeChatting-right"><p>22:10</p></div>
-          </div> -->
           <div class="bodyChatSend">
             <div class="attachment">
               <img src="../assets/img/icons8-lol-50.png" width="30px" height="30px">
@@ -56,15 +48,8 @@
       <div class="headChat">
         <h1>Alphabet</h1>
       </div>
-      <!-- <div class="search">
-        <input type="text" placeholder="search">
-      </div> -->
       <div v-for="chat in 1" :key="chat" class="bodyChat">
         <div class="people">
-          <!-- <div class="photo">
-            <img src="../assets/img/foto_ig.jpg">
-            <img :src="user[0].image" alt="photo">
-          </div> -->
           <div class="peopleName">
             <div class="personName"><h2>Muhammad Yusuf</h2></div>
             <div class="personChat"> <p>{{ messages[messages.length-1].message }}</p></div>
@@ -76,6 +61,7 @@
   <sidebar/>
   <modulemore/>
   <infoModul/>
+  <MainChat/>
   </div>
 </template>
 
@@ -85,6 +71,7 @@ import modulemore from '../components/Modulemore.vue'
 import db from '../firebaseInit'
 import infoModul from '../components/infoModul'
 import firebase from 'firebase'
+// import MainChat from '../components/MainChat'
 
 export default {
   name: 'home',
@@ -99,6 +86,7 @@ export default {
     Sidebar,
     modulemore,
     infoModul
+    // MainChat
   },
   methods: {
     scrollToBottom () {
@@ -448,20 +436,18 @@ export default {
     }
   }
   .chatting{
-    // background-color: rgb(174, 224, 123);
     width: 35vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     .headChat{
-      // background-color: lightblue;
       width: 100%;
       height: 10%;
       box-shadow: 0 0 2px rgba(0, 0, 0, 0.562);
-      border-radius: 10px;
       padding-left: 20px;
       display: flex;
+      box-sizing: border-box;
       align-items: center;
       h1{
         text-align: left;
@@ -470,7 +456,6 @@ export default {
       }
     }
     .search{
-      // background-color: lightcoral;
       width: 90%;
       height: 10%;
       display: flex;

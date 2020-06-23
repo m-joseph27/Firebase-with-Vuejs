@@ -1,5 +1,6 @@
 <template>
-  <div class="MainchatParent"></div>
+  <div class="MainchatParent">
+  </div>
 </template>
 
 <script>
@@ -10,12 +11,13 @@ export default {
 
 <style lang="postcss" scoped>
 .MainchatParent{
-  background-color: #fff;
-  position: relative;
+  background-color: white;
+  position: fixed;
   top: 0;
   right: 0;
-  width: 500px;
-  height: 500px;
+  width: 932px;
+  height: 100vh;
+  z-index: 2;
 }
 
 </style>
