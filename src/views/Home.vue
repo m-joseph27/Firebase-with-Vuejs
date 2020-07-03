@@ -105,7 +105,8 @@ export default {
         message: this.msg,
         author: this.authUser.email,
         createdAt: new Date(),
-        time: `${date.getHours()}:${date.getMinutes()}`
+        time: `${date.getHours()}:${date.getMinutes()}:${date.getUTCDate()}`,
+        day: new Date()
       })
         .then(() => {
           this.scrollToBottom()
