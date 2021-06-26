@@ -26,10 +26,12 @@
       </div>
       <div class="personalBodyChat">
         <div class="personalBodyChatWrap">
+        //
           <div v-for="message in messages" :key="message" :class="[message.author==authUser.email?'personalChatting-right':'personalChatting']">
             <div :class="[message.author==authUser.email?'toChat-right':'toChat']"><p>{{ message.message }}</p></div>
             <div :class="[message.author==authUser.email?'timeChatting-right':'timeChatting']"><p>{{ message.time }}</p></div>
           </div>
+         //
           <div class="bodyChatSend">
             <div class="attachment">
               <img src="../assets/img/icons8-lol-50.png" width="30px" height="30px">
